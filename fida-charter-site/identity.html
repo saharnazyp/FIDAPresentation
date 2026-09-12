@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>هویت و مأموریت | نظام‌نامهٔ فیدا</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css"></head><body>
+
+<header class="page-hero"><div class="wrap">
+  <div class="crumb">فیدا / <span class="en">Identity</span></div>
+  <h1>هویت، فلسفه و <span class="g">مأموریت</span></h1>
+  <p class="lead" id="def"></p>
+</div></header>
+
+<section class="sec"><div class="wrap">
+  <div class="kicker">ماهیت</div>
+  <p class="statement" id="nature"></p>
+  <div class="grid g2" style="margin-top:40px">
+    <div class="card"><div class="ico">🎯</div><h3>مأموریت <span class="en">Mission</span></h3><p id="mission"></p></div>
+    <div class="card"><div class="ico">🔭</div><h3>چشم‌انداز <span class="en">Vision</span></h3><p id="vision"></p></div>
+  </div>
+  <div class="axiom" id="vaxiom" style="margin-top:20px"></div>
+</div></section>
+
+<section class="sec" style="background:var(--space-2)"><div class="wrap">
+  <div class="kicker">فلسفهٔ وجودی</div>
+  <h2>فیدا چه مسائلی را <span class="g">حل می‌کند</span>؟</h2>
+  <div class="numlist" id="problems" style="margin-top:24px"></div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <div class="kicker">مرز مفهومی</div>
+  <h2>فیدا چه <span class="g">می‌کند</span>، چه <span class="g">نمی‌کند</span></h2>
+  <div class="split" style="margin-top:24px">
+    <div class="pane is"><h3>فیدا انجام می‌دهد</h3><ul id="does"></ul></div>
+    <div class="pane isnot"><h3>فیدا انجام نمی‌دهد</h3><ul id="doesnot"></ul></div>
+  </div>
+</div></section>
+
+<script src="assets/content.js"></script><script src="assets/common.js"></script>
+<script>
+mountChrome('identity.html');
+document.getElementById('def').textContent = FIDA.identity.definition;
+document.getElementById('nature').innerHTML = FIDA.identity.nature.replace('اکوسیستم حکمرانی','<span class="g">اکوسیستم حکمرانی</span>');
+document.getElementById('mission').textContent = FIDA.identity.mission;
+document.getElementById('vision').textContent = FIDA.identity.vision;
+document.getElementById('vaxiom').textContent = FIDA.identity.visionAxiom;
+FIDA.problems.forEach(p=>document.getElementById('problems').appendChild(el('div','numitem',`<div class="num"></div><div><p>${p}</p></div>`)));
+FIDA.does.forEach(x=>document.getElementById('does').appendChild(el('li',null,x)));
+FIDA.doesNot.forEach(x=>document.getElementById('doesnot').appendChild(el('li',null,x)));
+</script></body></html>

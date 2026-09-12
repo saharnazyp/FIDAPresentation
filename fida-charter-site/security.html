@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محرمانگی و کارت‌ها | نظام‌نامهٔ فیدا</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css"></head><body>
+<header class="page-hero"><div class="wrap">
+  <div class="crumb">فیدا / <span class="en">Security</span></div>
+  <h1>محرمانگی، عدم دور زدن و <span class="g">اتاق امن</span></h1>
+  <p class="lead">صیانت از اعتماد، هستهٔ سلامت فیداست. محرمانگی، ممنوعیت دور زدن و اتاق امن مذاکره، سه ستون حفاظت از حقوق نقش‌های ثبت‌شده‌اند.</p>
+</div></header>
+<section class="sec"><div class="wrap">
+  <div class="grid g3">
+    <div class="card"><div class="ico">🔐</div><h3>اصل محرمانگی</h3><p id="conf"></p></div>
+    <div class="card"><div class="ico">🚫</div><h3>عدم دور زدن</h3><p id="bypass"></p></div>
+    <div class="card"><div class="ico">🛡️</div><h3>اتاق امن مذاکره</h3><p id="saferoom"></p></div>
+  </div>
+  <div class="axiom" style="margin-top:24px">دور زدن، حملهٔ مستقیم به اعتماد فیداست.</div>
+</div></section>
+<section class="sec" style="background:var(--space-2)"><div class="wrap">
+  <div class="kicker">ضمانت اجرا</div>
+  <h2>نظام نُه <span class="g">کارتیِ</span> اعتماد</h2>
+  <p class="prose">کارت هر عضو، وضعیت اعتماد و سطح دسترسی او را نشان می‌دهد و به‌صورت پویا تغییر می‌کند.</p>
+  <div class="trust-strip" id="cards" style="margin-top:24px"></div>
+</div></section>
+<script src="assets/content.js"></script><script src="assets/common.js"></script>
+<script>
+mountChrome('security.html');
+document.getElementById('conf').textContent = FIDA.security.confidentiality;
+document.getElementById('bypass').textContent = FIDA.security.noBypass;
+document.getElementById('saferoom').textContent = FIDA.security.safeRoom;
+FIDA.cards.forEach(c=>document.getElementById('cards').appendChild(
+  el('div','tc',`<div class="band" style="background:${c.c}"></div><div class="tn">${c.name}</div><div class="te en">${c.en}</div><div class="td">${c.d}</div>`)));
+</script></body></html>

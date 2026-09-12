@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تهاتر و تسویه | نظام‌نامهٔ فیدا</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css"></head><body>
+<header class="page-hero"><div class="wrap">
+  <div class="crumb">فیدا / <span class="en">Trade & Barter</span></div>
+  <h1>فیدا ترید، <span class="g">تهاتر</span> و تسویه</h1>
+  <p class="lead">بازوی تخصصی توسعهٔ تجارت، تهاتر و تسویهٔ فیدا — از میز کشور و پاسپورت صادراتی تا اتاق تهاتر و اتاق امانت. فیدا مسیر و سازوکار را فراهم می‌کند، اما ضامن قطعی پرداخت یا صادرات نیست.</p>
+</div></header>
+<section class="sec"><div class="wrap">
+  <div class="grid g3" id="trade"></div>
+</div></section>
+<script src="assets/content.js"></script><script src="assets/common.js"></script>
+<script>
+mountChrome('trade.html');
+FIDA.trade.forEach(t=>document.getElementById('trade').appendChild(
+  el('div','card',`<div class="ico">${t.ico}</div><h3>${t.t} <span class="en">${t.en}</span></h3><p>${t.d}</p>`)));
+</script></body></html>

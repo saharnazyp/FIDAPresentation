@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حکمرانی و ارکان | نظام‌نامهٔ فیدا</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css"></head><body>
+
+<header class="page-hero"><div class="wrap">
+  <div class="crumb">فیدا / <span class="en">Governance</span></div>
+  <h1>ارکان <span class="g">حکمرانی</span> و نظارت</h1>
+  <p class="lead">فیدا یک اکوسیستم حکمرانی است؛ نه فقط فعالیت، بلکه قاعده‌گذاری، ثبت، اعتبارسنجی، کنترل، داوری و صیانت. حکمرانی از هفده رکن تشکیل شده است.</p>
+</div></header>
+
+<section class="sec"><div class="wrap">
+  <div class="kicker">اصول بنیادین</div>
+  <h2>شش <span class="g">اصلِ</span> پایه</h2>
+  <div class="grid g3" style="margin-top:24px" id="principles"></div>
+</div></section>
+
+<section class="sec" style="background:var(--space-2)"><div class="wrap">
+  <div class="kicker">ارکان</div>
+  <h2>هفده <span class="g">رکن</span> حکمرانی</h2>
+  <div class="numlist" id="governance" style="margin-top:24px"></div>
+  <div class="axiom" id="gaxiom" style="margin-top:24px"></div>
+</div></section>
+
+<script src="assets/content.js"></script><script src="assets/common.js"></script>
+<script>
+mountChrome('governance.html');
+FIDA.principles.forEach(p=>document.getElementById('principles').appendChild(
+  el('div','card',`<h3>${p.t}</h3><p>${p.d}</p>`)));
+FIDA.governance.forEach(g=>document.getElementById('governance').appendChild(
+  el('div','numitem',`<div class="num"></div><div><h4>${g}</h4></div>`)));
+document.getElementById('gaxiom').textContent = FIDA.governanceAxiom;
+</script></body></html>

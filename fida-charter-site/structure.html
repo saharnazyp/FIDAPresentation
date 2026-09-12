@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ساختار و زنجیره | نظام‌نامهٔ فیدا</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.chain-vert{display:flex;flex-direction:column;gap:0;margin-top:24px;position:relative}
+.clink{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 24px;position:relative;margin-bottom:34px;transition:border-color .3s,transform .3s}
+.clink:hover{border-color:var(--gold-dim);transform:translateX(-4px)}
+.clink:not(:last-child)::after{content:"↓";position:absolute;bottom:-30px;right:34px;color:var(--gold-dim);font-size:1.3rem}
+.clink .step{font-family:'Space Grotesk';font-size:.8rem;color:var(--gold-dim)}
+.clink h3{font-size:1.2rem;margin:4px 0 7px}.clink h3 .en{color:var(--gold);font-size:.9rem;font-weight:500}
+.clink p{color:var(--ink-dim);font-size:.93rem;max-width:720px}
+.clink .lvl{position:absolute;top:22px;left:24px;font-family:'Space Grotesk';font-size:1.5rem;font-weight:700;color:rgba(233,198,107,.18)}
+</style></head><body>
+
+<header class="page-hero"><div class="wrap">
+  <div class="crumb">فیدا / <span class="en">Structure</span></div>
+  <h1>زنجیرهٔ <span class="g">رسمی</span> اکوسیستم</h1>
+  <p class="lead">هشت سطح، از کوچک‌ترین واحد (عضو) تا رکن صیانتی (هیئت مؤسس). هیچ ساختاری نمی‌تواند جای سطح دیگر را بگیرد یا خارج از این زنجیره با نام فیدا فعالیت کند.</p>
+</div></header>
+
+<section class="sec"><div class="wrap">
+  <div class="chain-vert" id="chain"></div>
+</div></section>
+
+<script src="assets/content.js"></script><script src="assets/common.js"></script>
+<script>
+mountChrome('structure.html');
+const cv=document.getElementById('chain');
+FIDA.chain.forEach((c,i)=>{
+  cv.appendChild(el('div','clink',
+    `<span class="lvl">${['۱','۲','۳','۴','۵','۶','۷','۸'][i]}</span>
+     <div class="step">سطح ${['اول','دوم','سوم','چهارم','پنجم','ششم','هفتم','هشتم'][i]}</div>
+     <h3>${c.t} <span class="en">${c.en}</span></h3><p>${c.d}</p>`));
+});
+</script></body></html>

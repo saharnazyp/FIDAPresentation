@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>اقتصاد تیمی و فیرپلی | نظام‌نامهٔ فیدا</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.meta-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;margin-top:24px}
+.mcell{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:16px;transition:all .3s}
+.mcell:hover{transform:scale(1.04);border-color:var(--gold);background:rgba(233,198,107,.06)}
+.mcell .mk{font-weight:800;color:var(--gold);font-size:1rem}.mcell .mk .en{color:var(--gold-dim);font-size:.74rem;display:block;font-weight:500}
+.mcell .mv{color:var(--ink-dim);font-size:.85rem;margin-top:4px}
+</style></head><body>
+
+<header class="page-hero"><div class="wrap">
+  <div class="crumb">فیدا / <span class="en">Team Economy</span></div>
+  <h1>اقتصاد تیمی و <span class="g">زبان فوتبالی</span></h1>
+  <p class="lead">فیدا از زبان فوتبالی برای ساده‌سازی و قابل‌فهم‌کردن اقتصاد تیمی استفاده می‌کند: فیدا زمین بازیِ اقتصاد سالم است؛ اعضا بازیکنان اقتصادی؛ و «گل سالم» یعنی نتیجه از مسیر درست.</p>
+</div></header>
+
+<section class="sec"><div class="wrap">
+  <div class="kicker">زبان مشترک</div>
+  <h2>از فوتبال به <span class="g">اقتصاد</span></h2>
+  <div class="meta-grid" id="meta"></div>
+</div></section>
+
+<section class="sec" style="background:var(--space-2)"><div class="wrap">
+  <div class="kicker">منشور فیرپلی اقتصادی</div>
+  <h2 id="fp-title">بازیِ <span class="g">جوانمردانه</span></h2>
+  <p class="prose" id="fp-intro"></p>
+  <div class="grid g2" id="fairplay" style="margin-top:24px"></div>
+</div></section>
+
+<script src="assets/content.js"></script><script src="assets/common.js"></script>
+<script>
+mountChrome('economy.html');
+const mg=document.getElementById('meta');
+FIDA.metaphor.forEach(m=>mg.appendChild(el('div','mcell',
+  `<div class="mk">${m.k}<span class="en">${m.en}</span></div><div class="mv">${m.v}</div>`)));
+document.getElementById('fp-intro').textContent = FIDA.fairPlay.intro;
+const fg=document.getElementById('fairplay');
+FIDA.fairPlay.items.forEach(f=>fg.appendChild(el('div','card',
+  `<h3>${f.t} <span class="en">${f.en}</span></h3><p>${f.d}</p>`)));
+</script></body></html>
